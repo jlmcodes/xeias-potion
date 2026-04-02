@@ -1139,12 +1139,6 @@ export default function App() {
           active={activeTab === 'calculators'}
           onClick={() => setActiveTab('calculators')}
         />
-        <NavButton
-          icon={<User />}
-          label="Profile"
-          active={activeTab === 'profile'}
-          onClick={() => setActiveTab('profile')}
-        />
 
         <div className="md:mt-auto pt-4 border-t border-[#F2D59B] hidden md:block"></div>
         <NavButton
@@ -1256,7 +1250,6 @@ export default function App() {
             user={user}
           />
         )}
-        {activeTab === 'hub' && <PeptideHubView />}
         {activeTab === 'info' && <PrivacyInfoView />}
       </main>
 
@@ -2315,20 +2308,22 @@ function AestheticsView({ logs, onSave, onDelete }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+          <div className="space-y-2 mb-4">
             {lemonBottleGuide.map((g) => (
               <div
                 key={g.area}
-                className="p-3 dark:bg-stone-800 bg-[#FCF9F2] rounded-xl border border-[#F2D59B] flex flex-col justify-between"
+                className="flex justify-between items-center p-3 dark:bg-stone-800 bg-[#FCF9F2] rounded-xl border border-[#F2D59B]"
               >
-                <p className="font-bold dark:text-stone-100 text-stone-800 mb-2 truncate" title={g.area}>{g.area}</p>
-                <div className="text-xs flex justify-between gap-1 dark:text-stone-300 text-stone-600 font-medium whitespace-nowrap">
-                  <div>
-                    Points: <strong className="text-[#E5A024]">{g.points}</strong>
-                  </div>
-                  <div className="text-right">
-                    Usage: <strong className="text-[#E5A024]">{g.usage} ml</strong>
-                  </div>
+                <span className="font-bold dark:text-stone-100 text-stone-800 text-sm truncate pr-2" title={g.area}>
+                  {g.area}
+                </span>
+                <div className="flex gap-2 flex-shrink-0">
+                  <span className="text-[10px] sm:text-xs font-bold text-white bg-[#E5A024] px-2 py-1 rounded-md">
+                    {g.points} pts
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-bold text-white bg-[#E5A024] px-2 py-1 rounded-md">
+                    {g.usage} ml
+                  </span>
                 </div>
               </div>
             ))}
