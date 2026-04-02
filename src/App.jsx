@@ -1139,6 +1139,8 @@ export default function App() {
           active={activeTab === 'calculators'}
           onClick={() => setActiveTab('calculators')}
         />
+
+      
         <NavButton
           icon={<ShieldCheck />}
           label="Privacy & Info"
