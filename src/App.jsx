@@ -1162,7 +1162,7 @@ export default function App() {
       </nav>
 
       {/* Main Content Area */}
-      <main className="flex-1 p-4 md:p-8 overflow-y-auto">
+      <main className="flex-1 min-w-0 p-4 md:p-8 overflow-y-auto">
         {activeTab === 'dashboard' && (
           <Dashboard
             peptides={peptides}
