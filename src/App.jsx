@@ -1162,7 +1162,7 @@ export default function App() {
       </nav>
 
       {/* Main Content Area */}
-      <main className="flex-1 min-w-0 p-4 md:p-8 overflow-y-auto">
+      <main className="flex-1 p-4 md:p-8 overflow-y-auto">
         {activeTab === 'dashboard' && (
           <Dashboard
             peptides={peptides}
@@ -1688,11 +1688,11 @@ function StackManager({ peptides, onAddClick, onEditClick, onDelete }) {
                 </button>
               </div>
               <div className="flex items-start justify-between mb-4">
-                <div className="min-w-0 pr-4">
-                  <h3 className="text-xl font-bold dark:text-stone-100 text-stone-800 truncate">
+                <div>
+                  <h3 className="text-xl font-bold dark:text-stone-100 text-stone-800">
                     {pep.name}
                   </h3>
-                  <p className="text-sm text-[#E5A024] font-medium truncate">
+                  <p className="text-sm text-[#E5A024] font-medium">
                     {pep.description}
                   </p>
                 </div>
@@ -2078,16 +2078,16 @@ function WeightTrackerView({
                       key={log.id}
                       className="dark:bg-stone-900 bg-white hover:bg-[#FCF9F2] dark:hover:bg-stone-800 transition-colors group"
                     >
-                      <td className="px-4 py-3 max-w-[200px]">
-                          <span className="font-bold dark:text-stone-100 text-stone-800 block break-words whitespace-normal">
-                            {log.description}
-                          </span>
-                          {log.calories > 0 && (
-                            <span className="text-[#E5A024] font-bold text-xs">
-                              {log.calories} kcal
-                            </span>
-                          )}
-                        </td>
+                      <td className="px-4 py-3 whitespace-nowrap">
+                        <div className="font-bold dark:text-stone-100 text-stone-800">
+                          {d.toLocaleDateString()}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className="font-bold text-[#E5A024] block">
+                          {log.weight} kg
+                        </span>
+                      </td>
                       <td className="px-4 py-3 text-right">
                         <div className="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                           <button
