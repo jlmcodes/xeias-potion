@@ -1139,14 +1139,6 @@ export default function App() {
           active={activeTab === 'calculators'}
           onClick={() => setActiveTab('calculators')}
         />
-
-        <div className="md:mt-auto pt-4 border-t border-[#F2D59B] hidden md:block"></div>
-        <NavButton
-          icon={<BookOpen />}
-          label="Peptide Hub"
-          active={activeTab === 'hub'}
-          onClick={() => setActiveTab('hub')}
-        />
         <NavButton
           icon={<ShieldCheck />}
           label="Privacy & Info"
